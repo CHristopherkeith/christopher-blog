@@ -1,0 +1,7 @@
+.article{
+    padding: 40px;
+    margin: 40px;
+    /*background: #fff;*/
+    box-shadow: 0 0 14px #cacbcc;
+    text-align: left;
+}
