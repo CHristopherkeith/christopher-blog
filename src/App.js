@@ -1,8 +1,9 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 // import 'highlight.js/styles/github.css'
-import 'highlight.js/styles/railscasts.css';
+// import 'highlight.js/styles/monokai-sublime.css';
 import style from './App.module.css';
+import './utils/marked/monokai_sublime.css';
 import {
   BrowserRouter as Router,
   Route,

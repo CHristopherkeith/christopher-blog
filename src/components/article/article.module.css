@@ -5,3 +5,22 @@
     box-shadow: 0 0 14px #cacbcc;
     text-align: left;
 }
+.articleTitle{
+	text-align: center;
+    line-height: 1.5;
+    font-size: 22px;
+    font-weight: 500;
+    color: #2c3e50 !important;
+}
+.articleRemark{
+	text-align: center;
+	margin: 4px 0px 40px 0px;
+	font-size: 13px;
+    color: #999;
+}
+.articleRemark>span>i{
+	margin-right: 4px;
+}
+.dividingLine{
+	margin: 0px 8px;
+}
