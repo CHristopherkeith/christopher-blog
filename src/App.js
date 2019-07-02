@@ -10,6 +10,7 @@ import {
   Switch,
 } from 'react-router-dom'
 import {Layout, Home, Tags, About} from './views'
+import {Article} from './components'
 
 console.log(style, '[style]')
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/home" component={Home}/>
             <Route path="/tags" component={Tags}/>
             <Route path="/about" component={About}/>
+            <Route path="/detail/:id" render={() => <Article isDetail></Article>}/>
           </Switch>
         </Layout>
       </Router>

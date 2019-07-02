@@ -24,3 +24,13 @@
 .dividingLine{
 	margin: 0px 8px;
 }
+.articleRead{
+	text-align: center;
+}
+.articleRead>button{
+	height: auto;
+	padding: 8px 10px;
+}
+.articleContent>p{
+	margin: 14px 0px 24px 0px;
+}

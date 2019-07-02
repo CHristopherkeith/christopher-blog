@@ -1,3 +1,4 @@
+/*index.css*/
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -18,4 +19,14 @@ html, body, #root{
 	height: 100%;
 	width: 100%;
 	padding: 0;
+}
+.grayBtn>button{
+    color: #999 !important;
+    font-weight: 500 !important;
+    border-color: #dcdada !important;
+    background-color: #fafafa !important;
+}
+.grayBtn>button:hover{
+  color: #ffffff !important;
+  background-color: #999 !important;
 }
