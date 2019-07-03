@@ -1,7 +1,7 @@
 import React from 'react';
 import {Article} from '../../components'
 import {withRouter} from 'react-router'
-import {Tag} from 'antd'
+import {Tag, Pagination} from 'antd'
 import classNames from 'classnames/bind'
 import style from './tagDetail.module.css'
 import tagStyle from '../tag/tags.module.css'
@@ -19,13 +19,19 @@ class TagDetail extends React.Component{
 		super(props)
 		this.state = {
 			articleList: [],
-			tag: null
+			tag: null,
+			total: 0,
+			current: 1
 		}
+		this.pageOnChange = this.pageOnChange.bind(this)
+	}
+	pageOnChange(page, pageSize){
+		this.setState({
+			current: page
+		})
 	}
 	componentDidMount(){
-		console.log(this.props.match.params.name, '[name]')
 		let {match: {params: {name}}} = this.props;
-		console.log(name, '[name233]')
 		this.setState({
 			articleList: [
 				{
@@ -41,7 +47,8 @@ class TagDetail extends React.Component{
 					title: 'It\'s not overly bloated, unlike HTML.'
 				},
 			],
-			tag: name
+			tag: name,
+			total: 400
 		})
 	}
 	render(){
@@ -51,6 +58,13 @@ class TagDetail extends React.Component{
 					<Tag>{this.state.tag}</Tag>
 				</div>
 				<TagArticleList articleList={this.state.articleList}></TagArticleList>
+				<Pagination
+				className="grayPagination"
+				size="small"
+				total={this.state.total}
+				onChange={this.pageOnChange}
+				current={this.state.current}
+				/>
 			</div>
 		)
 	}

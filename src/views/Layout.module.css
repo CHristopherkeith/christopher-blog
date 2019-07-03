@@ -26,6 +26,15 @@
 .blogNav ul li a{
 	text-decoration: none;
     color: #303133;
+    display: inline-block;
+    transition: all 0.1s;
+}
+.blogNav ul li a:hover{
+	color: #000;
+	/*font-weight: bolder;*/
+	transform: scale(1.2);
+	-ms-transform: scale(1,2);
+	/*background-color: #999;*/
 }
 .blogTitle{
 	font-size: 20px;
