@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router'
+import { Link } from 'react-router-dom'
 import Marked from 'marked'
 import hljs  from 'highlight.js'
 import { Icon, Button } from 'antd';
@@ -48,16 +49,30 @@ class Article extends React.Component{
 				date: date,
 				tag: tag,
 				title: title,
-				content: content
+				content: content || ''
 			})
 		}
 	}
 	render() {
-		let isDetail = this.props.isDetail;
+		let {isDetail, tagArticle} = this.props;
 		let {date, tag, title, content} = this.state;
 		let articleContent = Marked(content);
-		return (
-			<div className={style.article}>
+		let renderContent;
+		if(tagArticle){
+			renderContent = 
+			<React.Fragment>
+				<div>
+					<Link to={`/detail/${this.state.id}`} className={style.articlLink}>
+						<Icon type="double-right" />
+						<span>{date}</span>
+						<h3>{title}</h3>
+					</Link>
+				</div>
+				
+			</React.Fragment>
+		}else{
+			renderContent = 
+			<React.Fragment>
 				<h1 className={style.articleTitle}>{title}</h1>
 				<div className={style.articleRemark}>
 					<span className={style.articleDate}>
@@ -74,9 +89,33 @@ class Article extends React.Component{
 					<div className={cx({articleRead: true, grayBtn: true})}>
 						<Button type="primary" ghost onClick={this.handleRead}>阅读全文<Icon type="double-right" /></Button>
 					</div>
-					:null
+					:
+					null
 				}
-				
+			</React.Fragment>
+		}
+		return (
+			<div className={cx({article: true, tagArticle: !!tagArticle})}>
+				{/*<h1 className={style.articleTitle}>{title}</h1>
+				<div className={style.articleRemark}>
+					<span className={style.articleDate}>
+						<Icon type="calendar" />{date}
+					</span>
+					<span className={style.dividingLine}> | </span>
+					<span className={style.articleTags}>
+						<Icon type="tags" />{tag}
+					</span>
+				</div>
+				<div dangerouslySetInnerHTML={{__html:articleContent}} className={style.articleContent}></div>
+				{
+					!isDetail ? 
+					<div className={cx({articleRead: true, grayBtn: true})}>
+						<Button type="primary" ghost onClick={this.handleRead}>阅读全文<Icon type="double-right" /></Button>
+					</div>
+					:
+					null
+				}*/}
+				{renderContent}
 			</div>
 		)
 	}

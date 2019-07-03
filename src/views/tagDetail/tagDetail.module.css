@@ -1,0 +1,15 @@
+/*tagDetail.module.css*/
+.tagDetail{
+	position: relative;
+}
+.tagDetail:after{
+    content: " ";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    margin-left: -10px;
+    width: 4px;
+    height: 100%;
+    background: #f5f5f5;
+    z-index: 1;
+}

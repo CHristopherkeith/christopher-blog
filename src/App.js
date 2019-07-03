@@ -9,7 +9,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom'
-import {Layout, Home, Tags, About} from './views'
+import {Layout, Home, Tags, About, TagDetail} from './views'
 import {Article} from './components'
 
 console.log(style, '[style]')
@@ -24,6 +24,7 @@ function App() {
             <Route path="/tags" component={Tags}/>
             <Route path="/about" component={About}/>
             <Route path="/detail/:id" render={() => <Article isDetail></Article>}/>
+            <Route path="/tagdetail/:name" render={() => <TagDetail isDetail></TagDetail>}/>
           </Switch>
         </Layout>
       </Router>

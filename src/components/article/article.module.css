@@ -5,6 +5,9 @@
     box-shadow: 0 0 14px #cacbcc;
     text-align: left;
 }
+.article.tagArticle{
+	padding: 24px !important;
+}
 .articleTitle{
 	text-align: center;
     line-height: 1.5;
@@ -33,4 +36,23 @@
 }
 .articleContent>p{
 	margin: 14px 0px 24px 0px;
+}
+.tagArticle>div{
+	border-bottom: 1px dashed #ccc;
+}
+.articlLink{
+	color: #999 !important;
+    /*border-bottom: 1px dashed #ccc;
+    display: inline-block;*/
+}
+.articlLink>span{
+    margin: 0px 16px;
+    color: #2c3e50;
+}
+.articlLink>h3{
+	display: inline;
+	line-height: 1.5;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 22px;
 }

@@ -3,9 +3,9 @@ import {Article} from '../../components'
 import style from './home.module.css'
 function ArticleList(props){
 	return (
-		props.articleList.map((item)=>{
-			return <Article {...item} key={item.id}></Article>
-		})
+		props.articleList.map((item)=>
+			<Article {...item} key={item.id}></Article>
+		)
 	)
 }
 class Home extends React.Component {
