@@ -48,7 +48,9 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div>
-				<ArticleList articleList={this.state.articleList}></ArticleList>
+				{/*<ArticleList articleList={this.state.articleList}></ArticleList>*/}
+				<Article {...this.state.articleList[0]}></Article>
+				<Article {...this.state.articleList[1]}></Article>
 				<Pagination
 				className="grayPagination"
 				size="small"

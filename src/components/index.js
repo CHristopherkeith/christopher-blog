@@ -1,2 +1,3 @@
 import Article from './article/article.js'
-export {Article}
+import CanvasLine from './canvasLine/canvasLine.js'
+export {Article, CanvasLine}
